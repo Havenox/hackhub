@@ -71,7 +71,7 @@
 "Estamos trazendo para os hackathons acadêmicos a lógica das guildas dos MMORPGs: uma plataforma que elimina o trabalho manual e transforma a formação de times em uma experiência de networking estruturado e inteligente."
 
 
-![Demonstração](hackhubdemo.gif)
+![Demonstração](docs/hackhubdemo.gif)
 
 
 ---
@@ -91,4 +91,22 @@ A aplicação está em produção no link:
 Swagger disponível em:  
 👉 [https://hackhubapi.impulse8.com.br/swagger/index.html](https://hackhubapi.impulse8.com.br/swagger/index.html)
 
+---
 
+### Infraestrutura Própria para o Protótipo:
+
+* **Ubuntu Server com Docker e Portainer**:
+
+![Portainer](docs/Portainer.png)
+
+
+
+* **Backend e Frontend**:
+
+![Back&Front](docs/FronteBackendLocal.gif)
+
+
+
+* **MariaDB**:
+
+![MariaDB](docs/MariaDBLocal.gif)
