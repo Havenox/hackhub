@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gaming-inspired dark theme with neon accents */
+    --background: 220 27% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 27% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 271 91% 65%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 220 27% 14%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 27% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 86% 60%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 27% 18%;
+    --input: 220 27% 18%;
+    --ring: 271 91% 65%;
+
+    --radius: 0.75rem;
+
+    /* Gaming-specific colors */
+    --neon-blue: 199 89% 48%;
+    --neon-cyan: 180 94% 75%;
+    --neon-pink: 330 85% 65%;
+    --gold: 45 93% 58%;
+    --silver: 210 11% 71%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--neon-pink)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 27% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(220 27% 12%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--neon-cyan)) 100%);
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
+    --shadow-card: 0 8px 32px hsl(220 27% 4% / 0.6);
+    --shadow-glow: 0 0 40px hsl(var(--accent) / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Maintain same dark gaming theme */
+    --background: 220 27% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 27% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 271 91% 65%;
+    --primary-foreground: 220 27% 8%;
+
+    --secondary: 220 27% 14%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 27% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 142 86% 60%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 27% 18%;
+    --input: 220 27% 18%;
+    --ring: 271 91% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
+
+@layer base {
+  /* largura da scrollbar (w-3 = 0.75rem) */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* track (container da barra) */
+  ::-webkit-scrollbar-track {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--card)) 100%
+    );
+    border-radius: var(--radius);
+  }
+
+  /* thumb (a 'pegadinha' que arrasta) */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--neon-pink)) 100%
+    );
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-neon);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  /* Firefox fallback */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  }
+}

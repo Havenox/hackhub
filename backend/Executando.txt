@@ -1,0 +1,24 @@
+cd .\backend\Api\
+
+dotnet ef --version
+
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add InitialCreate
+Isso faz o EF comparar suas entidades (Domain/) com o banco
+configurado e gerar um arquivo de migration em Migrations/.
+
+
+dotnet ef database update
+Isso conecta no MariaDB usando a ConnectionString do appsettings.json
+(ou variáveis de ambiente) e executa
+o SQL gerado para criar as tabelas.
+
+
+Se já existem migrations no repositório, você talvez não precise
+rodar dotnet ef migrations add, só o:
+dotnet ef database update
+
+
+dotnet run
+Rodando o Projeto

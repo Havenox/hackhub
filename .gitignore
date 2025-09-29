@@ -1,0 +1,79 @@
+### Node / React / Vite ###
+node_modules/
+dist/
+build/
+.vite/
+*.local
+*.log
+*.env
+.env.*.local
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.iml
+
+### TypeScript ###
+*.tsbuildinfo
+
+### Dotnet ###
+bin/
+obj/
+out/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+*.cache
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Configurações locais
+appsettings.Development.json
+
+# Pacotes
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+*.tlog
+
+# Teste
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Build
+*.dll
+*.exe
+*.app
+*.apk
+*.dmg
+*.iso
+*.msi
+*.zip
+*.tar
+*.tar.gz
+
+# Rider
+.idea/
+*.sln.iml
+
+# Backup
+*~
+*.bak
+*.tmp
+*.swp
+*.swo
