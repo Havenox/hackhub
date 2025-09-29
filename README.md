@@ -5,6 +5,13 @@
 
 👉[Github Pages](https://havenox.github.io/hackhub/)
 
+## Apresentação
+
+<video src="docs/Hackhub_Apresentacao.mp4" controls width="600"></video>
+👉[Assista no Youtube](https://youtu.be/LWMY1zwJ9pQ)
+
+
+
 ## Problema
 
 * A **formação de times em hackathons online** pode ser trabalhosa, causando confusão e até desorganização.
