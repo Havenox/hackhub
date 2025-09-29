@@ -37,6 +37,11 @@ var jwtKey = Environment.GetEnvironmentVariable("JWT__KEY") ?? configuration["Jw
 
 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
 
+
+//CARREGA A URL DO FRONT
+var frontBaseUrl = Environment.GetEnvironmentVariable("FRONT_BASE_URL");
+Console.WriteLine($"👉 Recebendo Front em: {frontBaseUrl}");
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -55,34 +60,25 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.FromMinutes(2)
     };
 });
-
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("OrganizerOnly", policy => policy.RequireRole("Organizer", "Admin"));
 });
-
-
 // =====================
-// 🚀 CORS CONFIGURATION
+// 🚀 configuraçãoo do cors
 // =====================
 var corsPolicyName = "_hackhubCors";
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: corsPolicyName,
         policy =>
         {
-            policy.WithOrigins("https://hackhub.impulse8.com.br") // domínio do front
+            //ENDEREÇO DO FRONT IMPORTADO DO .ENV
+            policy.WithOrigins(frontBaseUrl) // domínio do front
                   .AllowAnyHeader()
                   .AllowAnyMethod(); // permite GET, POST, OPTIONS, etc.
         });
 });
-
-
-
-
-
-
 // App Services
 builder.Services.AddSingleton<ITokenService>(new TokenService(jwtIssuer, jwtAudience, signingKey));
 builder.Services.AddSingleton<IHashingService, BcryptHashingService>();
