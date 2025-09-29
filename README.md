@@ -3,6 +3,8 @@
 
 👉[Repositório](https://github.com/Havenox/hackhub)
 
+👉[Github Pages](https://havenox.github.io/hackhub/)
+
 ## Problema
 
 * A **formação de times em hackathons online** pode ser trabalhosa, causando confusão e até desorganização.
