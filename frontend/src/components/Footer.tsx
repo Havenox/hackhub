@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Zap, Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-background/95 border-t border-border/50 py-12">
       <div className="container mx-auto px-4">
@@ -68,25 +69,28 @@ export const Footer = () => {
             <h4 className="text-lg font-orbitron font-bold mb-4 text-foreground">Conecte-se</h4>
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="http://github.com/havenox"
+                target="_blank"
                 className="p-2 bg-secondary/50 rounded-lg hover:bg-gradient-primary hover:shadow-neon transition-all duration-300 group"
               >
                 <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
               </a>
               <a 
-                href="#" 
+                href="https://x.com/Havenox"
+                target="_blank"
                 className="p-2 bg-secondary/50 rounded-lg hover:bg-gradient-primary hover:shadow-neon transition-all duration-300 group"
               >
                 <Twitter className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/havenox/" 
+                target="_blank"
                 className="p-2 bg-secondary/50 rounded-lg hover:bg-gradient-primary hover:shadow-neon transition-all duration-300 group"
               >
                 <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
               </a>
               <a 
-                href="#" 
+                href="mailto:eduardonascto@msn.com" 
                 className="p-2 bg-secondary/50 rounded-lg hover:bg-gradient-primary hover:shadow-neon transition-all duration-300 group"
               >
                 <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
@@ -103,7 +107,7 @@ export const Footer = () => {
           className="border-t border-border/50 mt-8 pt-8 text-center"
         >
           <p className="text-muted-foreground font-exo">
-            © 2024 Hackhub. Todos os direitos reservados. Feito com ❤️ para a comunidade de hackathons.
+            © {currentYear} Hackhub. Todos os direitos reservados.
           </p>
         </motion.div>
       </div>
